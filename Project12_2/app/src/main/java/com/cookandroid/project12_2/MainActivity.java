@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+
     myDBHelper myHelper;
     EditText edtName, edtNumber, edtNameResult, edtNumberResult;
     Button btnInit, btnInsert, btnSelect;
