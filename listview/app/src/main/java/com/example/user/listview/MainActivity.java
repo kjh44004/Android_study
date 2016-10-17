@@ -14,32 +14,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //데이터 원본
-        ArrayList<String> arGeneral = new ArrayList<String>();
-        arGeneral.add("김유신");
-        arGeneral.add("이순신");
-        arGeneral.add("강감찬");
-        arGeneral.add("을지문덕");
-        arGeneral.add("김유신");
-        arGeneral.add("이순신");
-        arGeneral.add("강감찬");
-        arGeneral.add("을지문덕");
-        arGeneral.add("김유신");
-        arGeneral.add("이순신");
-        arGeneral.add("강감찬");
-        arGeneral.add("을지문덕");
-        arGeneral.add("김유신");
-        arGeneral.add("이순신");
-        arGeneral.add("강감찬");
-        arGeneral.add("을지문덕");
-        arGeneral.add("김유신");
-        arGeneral.add("이순신");
-        arGeneral.add("강감찬");
-        arGeneral.add("을지문덕");
-
         //어댑터 준비
-        ArrayAdapter<String> Adapter;
-        Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, arGeneral);
+        ArrayAdapter<CharSequence> Adapter;
+        Adapter = ArrayAdapter.createFromResource(this, R.array.Korean, android.R.layout.simple_list_item_1);
 
       /*simple_list_itme_1 : 하나의 텍스트뷰로 구성된 레이아웃;
         simple_list_itme_2 : 두개의 텍스트뷰로 구성된 레이아웃;
