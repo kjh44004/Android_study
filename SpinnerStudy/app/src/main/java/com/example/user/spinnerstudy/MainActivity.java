@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -32,7 +33,11 @@ public class MainActivity extends Activity {
                     mInitSpinner = true;
                     return;
                 }
+
+                Toast.makeText(MainActivity.this, adspin.getItem(position) + "는 맛있다.", Toast.LENGTH_SHORT).show();
             }
+
+
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
