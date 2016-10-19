@@ -19,23 +19,24 @@ import static com.example.user.apisearch.R.id.textview;
 
 public class MainActivity extends AppCompatActivity {
 
+    public TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView view = (TextView) findViewById(textview);
+        textView = (TextView) findViewById(R.id.textview);
         AsyncTask<Void, Void, String> asyncTask = new AsyncTask<Void, Void, String>() {
             @Override
-            protected String doInBackground(Void[] params) {
-                Log.i("URLConn", getUrlContents("http://naver.com"));
-                return null;
+            protected String doInBackground(Void... params) {
+                return getUrlContents("http://m.naver.com");
             }
 
             @Override
             protected void onPostExecute(String o) {
                 super.onPostExecute(o);
-                view.setText(o);
+                textView.setText(o);
             }
         };
 
