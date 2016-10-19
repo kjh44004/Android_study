@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(String o) {
                 super.onPostExecute(o);
-                view.setText("test");
+                view.setText(o);
             }
         };
 
