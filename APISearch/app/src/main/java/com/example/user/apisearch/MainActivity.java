@@ -3,6 +3,7 @@ package com.example.user.apisearch;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         AsyncTask asyncTask = new AsyncTask() {
             @Override
             protected Object doInBackground(Object[] params) {
-                getUrlContents("http://naver.com");
+                Log.i("URLConn", getUrlContents("http://naver.com"));
                 return null;
             }
         };
