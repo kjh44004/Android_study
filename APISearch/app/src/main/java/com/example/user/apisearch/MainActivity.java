@@ -15,6 +15,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
+import static com.example.user.apisearch.R.id.textview;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -22,12 +24,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView view = (TextView) findViewById(R.id.textview);
-        AsyncTask asyncTask = new AsyncTask() {
+        final TextView view = (TextView) findViewById(textview);
+        AsyncTask<Void, Void, String> asyncTask = new AsyncTask<Void, Void, String>() {
             @Override
-            protected Object doInBackground(Object[] params) {
+            protected String doInBackground(Void[] params) {
                 Log.i("URLConn", getUrlContents("http://naver.com"));
                 return null;
+            }
+
+            @Override
+            protected void onPostExecute(String o) {
+                super.onPostExecute(o);
+                view.setText("test");
             }
         };
 
