@@ -1,0 +1,5 @@
+[context의 종류 3가지]
+
+-application
+-activity
+-service
