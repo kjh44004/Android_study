@@ -40,17 +40,29 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            protected void onPostExecute(String o) {
+            protected void onPostExecute(String jsonString) {
+                method1(jsonString);
+                method2(jsonString);
+            }
+
+            private void method1(String jsonString){
                 /*build.gradle에 compile 'com.google.code.gson:gson:2.7'를 추가해야함*/
                 /*json을 자바 객체마냥 사용할수 있게 변경*/
                 Gson gson = new Gson();
-
                 Type type = new TypeToken<Map<String, String>>(){}.getType();
-                Map<String, String> o1 = gson.fromJson(o, type); /*gsonFromJson*/
+                Map<String, String> o1 = gson.fromJson(jsonString, type); /*gsonFromJson*/
 
                 Toast.makeText(MainActivity.this, o1.get("a"), Toast.LENGTH_LONG).show();
             }
+            private void method2(String jsonString){
+                Gson gson = new Gson();
+                model o1 = gson.fromJson(jsonString, model.class);
+
+                Toast.makeText(MainActivity.this, o1.a, Toast.LENGTH_SHORT).show();
+            }
         };
+
+
 
         asyncTask.execute();
     }
