@@ -41,9 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             protected void onPostExecute(String o) {
+                /*build.gradle에 compile 'com.google.code.gson:gson:2.7'를 추가해야함*/
+                /*json을 자바 객체마냥 사용할수 있게 변경*/
                 Gson gson = new Gson();
+
                 Type type = new TypeToken<Map<String, String>>(){}.getType();
-                Map<String, String> o1 = gson.fromJson(o, type);
+                Map<String, String> o1 = gson.fromJson(o, type); /*gsonFromJson*/
 
                 Toast.makeText(MainActivity.this, o1.get("a"), Toast.LENGTH_LONG).show();
             }
