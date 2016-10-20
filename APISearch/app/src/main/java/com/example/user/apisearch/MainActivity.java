@@ -6,14 +6,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.lang.reflect.Type;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Map;
 
 import static com.example.user.apisearch.R.id.textview;
 
@@ -30,13 +36,16 @@ public class MainActivity extends AppCompatActivity {
         AsyncTask<Void, Void, String> asyncTask = new AsyncTask<Void, Void, String>() {
             @Override
             protected String doInBackground(Void... params) {
-                return getUrlContents("http://m.naver.com");
+                return getUrlContents("http://14.49.231.5/a.json");
             }
 
             @Override
             protected void onPostExecute(String o) {
-                super.onPostExecute(o);
-                textView.setText(o);
+                Gson gson = new Gson();
+                Type type = new TypeToken<Map<String, String>>(){}.getType();
+                Map<String, String> o1 = gson.fromJson(o, type);
+
+                Toast.makeText(MainActivity.this, o1.get("a"), Toast.LENGTH_LONG).show();
             }
         };
 

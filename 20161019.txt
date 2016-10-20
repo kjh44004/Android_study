@@ -55,3 +55,22 @@ private static String getUrlContents(String theUrl)
 }
 
 http://14.49.231.5/
+
+
+ Log.i("URLConn", getUrlContents("http://naver.com"));
+
+i는 info의 약자
+
+
+AsyncTask는 세가지로 나뉜다
+- onPreExecute() : Background 작업 시작전에 UI 작업을 진행 한다.
+- doInBackground() : Background 작업을 진행 한다.
+- nPostExecute() : Background 작업이 끝난 후 UI 작업을 진행 한다.
+
+FLOW를 살펴 보자면,
+
+[onPreExecute()] -> [doInBackground()] -> [onPostExecute()] 순서
+
+alt + insert -> overrideMethod
+
+시작전에 파라미터를 받을수 있고 진행중에 값을 넘겨줄수 있고 결과 값을 
