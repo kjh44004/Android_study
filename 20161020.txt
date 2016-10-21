@@ -37,4 +37,6 @@ json : 텍스트가 적게 들어가며 javascript과의 호환
 
 xml이 json보다 용량이 커서 시스템이 텍스트를 해석할때 json이 유리
 
-gson from string
+
+[gson from string]
+json을 자바 객체 처럼 사용가능하게 변경해주는 기능 gson
