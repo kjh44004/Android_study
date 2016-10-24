@@ -1,0 +1,9 @@
+ConvertView 안에있는 내용만 바꿔서 쓰는 재활용 뷰
+
+컨버터 뷰가 null일때, 내가 원하는 내용을 넣는다
+
+LayoytInflater??
+
+컨버터 뷰에 listviw_row 레이아웃을 LayoytInflater를 통해 넣는다
+
+그러면서 textview의 아이디를 findViewById로 convertView 객체에 알린다
