@@ -19,10 +19,13 @@ public class SubActivity extends AppCompatActivity {
         textView1.setText(getIntent().getStringExtra("string1"));
         textView2.setText(getIntent().getStringExtra("string2"));
     }
+
     public static void startActivity(Context context, String string1, String string2){
+
         Intent intent = new Intent(context, SubActivity.class);
         intent.putExtra("string1", string1);
         intent.putExtra("string2", string2);
         context.startActivity(intent);
+
     }
 }
