@@ -30,4 +30,12 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_CODE); /*cntl + alt + C*/
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_CODE && requestCode == SubActivity.RESULT_CODE){
+            Toast.makeText(this, data.getStringExtra("result"), Toast.LENGTH_LONG).show();
+        }
+    }
 }

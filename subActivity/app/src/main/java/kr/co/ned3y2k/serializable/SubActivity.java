@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 public class SubActivity extends AppCompatActivity {
 
+    public static final int RESULT_CODE = 4000;
     private EditText editText;
 
     @Override
@@ -37,5 +38,10 @@ public class SubActivity extends AppCompatActivity {
         intent.putExtra("string2", string2);
         context.startActivity(intent);
 
+    }
+    public void onClickOK(){
+        Intent intent = new Intent();
+        intent.putExtra("result", editText.)
+        setResult(RESULT_CODE, intent);
     }
 }
